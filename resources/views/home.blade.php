@@ -175,7 +175,7 @@
 
 
                     </div>
-                    <p class="flex w-full gap-2 pt-3 overflow-x-auto scrollbar-hide">
+                    <p class="flex w-full gap-2 pt-3 overflow-x-auto scrollbar-hide " id="container">
 
                         <button
                             class="flex text-sm transition border-2 border-transparent shrink-0 aspect-square rounded-xl focus:border-dashed focus:border-indigo-500">
