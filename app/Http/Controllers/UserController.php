@@ -12,6 +12,8 @@ class UserController extends Controller
 
     public function home()
     {
+        $user = User::latest()->get();
+        dd($user);
         return view("home");
     }
     public function search()
@@ -28,7 +30,6 @@ class UserController extends Controller
     public function userprofile($id)
     {
         $user = User::findOrFail($id);
-        return view("profile",compact('user'));
+        return view("profile", compact('user'));
     }
-
 }

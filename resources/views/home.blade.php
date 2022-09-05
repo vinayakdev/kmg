@@ -2,7 +2,7 @@
     <section class="text-gray-600 body-font">
         <div class="container max-w-5xl px-4 pt-4 mx-auto pb-36 ">
 
-            <div class="justify-center hidden p-4 px-6 pb-16 bg-white border rounded-3xl">
+            <div class="justify-center hidden p-4 px-6 bg-white border pb-74 rounded-3xl">
                 <div class="p-4">
                     hey
                 </div>
@@ -111,56 +111,58 @@
 
 
 
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 ">
                 <div class="col-span-3 info-box md:col-span-1">
+                    <div class="flex flex-col justify-between gap-8 ">
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center gap-4">
 
-                    <div class="flex items-center justify-between gap-4">
-                        <div class="flex items-center gap-4">
-
-                            <div class="text-3xl font-bold ">Lets find someone!</div>
-                        </div>
-
-
-
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 pt-3 text-sm">
-
-
-                        <div class="relative block p-4 border border-gray-100 shadow-xl bg-sky-100 rounded-xl">
-
-
-                            <div class="mt-4 text-gray-100 sm:pr-8">
-                                <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                </svg>
-
-                                <h5 class="mt-4 text-xl font-bold text-gray-900 md:text-sm xl:text-xl">Search</h5>
-
+                                <div class="text-3xl font-bold ">Lets find someone!</div>
                             </div>
+
+
+
                         </div>
-                        <div class="relative block p-4 border border-gray-100 shadow-xl bg-amber-100 rounded-xl">
-
-                            <div class="mt-4 text-gray-100 sm:pr-8">
-                                <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
-                                    </path>
-                                </svg>
-
-                                <h5 class="mt-4 text-xl font-bold text-gray-900 md:text-sm xl:text-xl">Random</h5>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
 
 
+                            <div class="relative block p-4 border border-gray-100 shadow-xl bg-sky-100 rounded-xl">
+
+
+                                <div class="mt-4 text-gray-100 sm:pr-8">
+                                    <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+
+                                    <h5 class="mt-4 text-xl font-bold text-gray-900 md:text-sm xl:text-xl">Search</h5>
+
+                                </div>
                             </div>
+                            <div class="relative block p-4 border border-gray-100 shadow-xl bg-amber-100 rounded-xl">
+
+                                <div class="mt-4 text-gray-100 sm:pr-8">
+                                    <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                                        </path>
+                                    </svg>
+
+                                    <h5 class="mt-4 text-xl font-bold text-gray-900 md:text-sm xl:text-xl">Random</h5>
+
+
+                                </div>
+                            </div>
+
+
+
+
+
                         </div>
-
-
-
-
-
                     </div>
+
 
                 </div>
                 <div class="col-span-3 md:col-span-2 info-box">
