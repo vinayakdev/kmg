@@ -178,35 +178,13 @@
 
                     </div>
                     <p class="flex w-full gap-2 pt-3 overflow-x-auto scrollbar-hide " id="container">
-
-                        <button
-                            class="flex text-sm transition border-2 border-transparent shrink-0 aspect-square rounded-xl focus:border-dashed focus:border-indigo-500">
-                            <img class="object-cover w-40 h-40 rounded-xl" src="{{ Auth::user()->profile_photo_url }}"
-                                alt="{{ Auth::user()->name }}" />
-                        </button>
-                        <button
-                            class="flex text-sm transition border-2 border-transparent shrink-0 aspect-square rounded-xl focus:border-dashed focus:border-indigo-500">
-                            <img class="object-cover w-40 h-40 rounded-xl" src="{{ Auth::user()->profile_photo_url }}"
-                                alt="{{ Auth::user()->name }}" />
-                        </button>
-                        <button
-                            class="flex text-sm transition border-2 border-transparent shrink-0 aspect-square rounded-xl focus:border-dashed focus:border-indigo-500">
-                            <img class="object-cover w-40 h-40 rounded-xl" src="{{ Auth::user()->profile_photo_url }}"
-                                alt="{{ Auth::user()->name }}" />
-                        </button>
-                        <button
-                            class="flex text-sm transition border-2 border-transparent shrink-0 aspect-square rounded-xl focus:border-dashed focus:border-indigo-500">
-                            <img class="object-cover w-40 h-40 rounded-xl" src="{{ Auth::user()->profile_photo_url }}"
-                                alt="{{ Auth::user()->name }}" />
-                        </button>
-                        <button
-                            class="flex text-sm transition border-2 border-transparent shrink-0 aspect-square rounded-xl focus:border-dashed focus:border-indigo-500">
-                            <img class="object-cover w-40 h-40 rounded-xl" src="{{ Auth::user()->profile_photo_url }}"
-                                alt="{{ Auth::user()->name }}" />
-                        </button>
-
-
-
+                        @foreach ($users as $user)
+                            <button onclick="window.open('/user/{{ $user->id }}', '_blank')  ;"
+                                class="flex text-sm transition border-2 border-transparent shrink-0 aspect-square rounded-xl focus:border-dashed focus:border-indigo-500">
+                                <img class="object-cover w-40 h-40 rounded-xl" src="{{ $user->profile_photo_url }}"
+                                    alt="{{ $user->name }}" />
+                            </button>
+                        @endforeach ($user in $users)
 
                     </p>
 
@@ -214,49 +192,68 @@
 
 
 
-                <div class="info-box">
+                <div class="flex col-span-3 sm:col-span-2 info-box ">
+                    <div class="">
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center pb-4">
+                                <div class="text-xl font-bold break-words">Status</div>
 
-                    <div class="flex items-center justify-between gap-4">
-                        <div class="flex items-center gap-4">
-                            <span class="emoji-description">
-                                🎓
+                            </div>
 
-                            </span>
 
-                            <div class="font-bold break-words lg:hidden ">Education</div>
-                            <div class="hidden font-bold break-words lg:flex">Education</div>
 
                         </div>
+                        <p class="">
+
+                            @if (Auth::user()->status == 'Unverified1')
+                                <div class="w-full p-4 bg-red-50 rounded-xl">
+                                    <div class="text-xl text-red-500">
+                                        Unverified !
+                                    </div>
+                                    <p>
+                                        Your account is being verified by the admin, this is to prevent fake users.
+                                    </p>
+                                    <p>
+                                        - You wont be able to see others nor will your profile be visible to others
+                                    </p>
+                                    <p class="pt-2 text-sm"> If you are still not verified, contact us
+                                    </p>
+                                </div>
+                            @else
+                                <div class="w-full p-4 bg-green-50 rounded-xl">
+                                    <div class="text-xl text-green-500">
+                                        Verified !
+                                    </div>
+                                    <p>
+                                        Your account is verified.
+                                    </p>
+                                    <p>
+                                        - You can now see others and your profile is available to others.
+                                    </p>
+                                    <p class="hidden">
+                                        - Keep it Professional, and dont misbehave.
+                                    </p>
+
+                                </div>
+                            @endif
 
 
 
+
+                        </p>
                     </div>
-                    <p class="pt-3 ">
 
-                        @if (isset($user))
-                            {{ $user->profile->education }}
-                        @else
-                            {{ Auth::user()->profile->education }}
-                        @endif
-
-
-
-
-                    </p>
 
                 </div>
 
-                <div class="col-span-2 info-box">
+                <div class="info-box ">
 
 
                     <div class="flex items-center justify-between gap-4">
                         <div class="flex items-center gap-4">
-                            <span class="emoji-description">
-                                💼
 
-                            </span>
 
-                            <div class="font-bold ">Work, Profession</div>
+                            <div class="font-bold ">Paid features!</div>
                         </div>
 
 
@@ -265,12 +262,8 @@
                     <div class="w-full pt-3 ">
                         <div>
 
-                            @if (isset($user))
-                                {{ $user->profile->job }}
-                            @else
-                                {{ Auth::user()->profile->job }}
-                            @endif
 
+                            Currently we dont provide any paid features till our userbase is more than 500 male/female
 
 
 
@@ -279,109 +272,7 @@
                     </div>
 
                 </div>
-                <div class="info-box">
 
-                    <div class="flex items-center justify-between gap-4">
-                        <div class="flex items-center gap-4">
-                            <span class="emoji-description">
-                                🎂
-
-                            </span>
-
-                            <div class="font-bold ">Date Of Birth</div>
-                        </div>
-
-
-
-                    </div>
-                    <p class="pt-3 ">
-                        {{-- {{ Carbon\Carbon::parse(Auth::user()->dob->isoFormat('MMM Do YY')) }} --}}
-
-
-                        @if (isset($user))
-                            {{ Carbon\Carbon::parse($user->dob)->isoFormat('Do MMM YY') }}
-                        @else
-                            {{ Carbon\Carbon::parse(Auth::user()->dob)->isoFormat('Do MMM YY') }}
-                        @endif
-
-
-
-
-                    </p>
-
-                </div>
-                <div class="info-box">
-
-                    <div class="flex items-center justify-between gap-4">
-                        <div class="flex items-center gap-4">
-                            <span class="emoji-description">
-
-                                @if (isset($user))
-                                    @if ($user->religion == 'Hindu')
-                                        🕉️
-                                    @elseif ($user->religion == 'Muslim')
-                                        🕋
-                                    @else
-                                        ⛪
-                                    @endif
-                                @else
-                                    @if (Auth::user()->religion == 'Hindu')
-                                        🕉️
-                                    @elseif (Auth::user()->religion == 'Muslim')
-                                        🕋
-                                    @else
-                                        ⛪
-                                    @endif
-                                @endif
-                            </span>
-
-                            <div class="font-bold ">Relegion, Caste</div>
-                        </div>
-
-
-
-                    </div>
-                    <p class="pt-3 ">
-
-                        @if (isset($user))
-                            {{ $user->religion }} , {{ $user->profile->caste }}
-                        @else
-                            {{ Auth::user()->religion }} , {{ Auth::user()->profile->caste }}
-                        @endif
-
-
-                    </p>
-
-                </div>
-                <div class="info-box">
-
-
-                    <div class="flex items-center justify-between gap-4">
-                        <div class="flex items-center gap-4">
-                            <span class="emoji-description">
-                                💪
-
-                            </span>
-
-                            <div class="font-bold ">Height, Weight</div>
-                        </div>
-
-
-
-                    </div>
-                    <p class="pt-3 ">
-
-                        @if (isset($user))
-                            {{ $user->profile->height }} m, {{ $user->profile->weight }} Kg
-                        @else
-                            {{ Auth::user()->profile->height }} m, {{ Auth::user()->profile->weight }} Kg
-                        @endif
-
-                    </p>
-
-
-
-                </div>
 
 
 

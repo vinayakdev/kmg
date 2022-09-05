@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+
 use Cache;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
 
     public function home()
     {
-        $user = User::latest()->get();
-        dd($user);
-        return view("home");
+        $users = User::latest()->where('gender', '!=', Auth::user()->gender)->take(5)->get();
+
+        return view("home", compact('users'));
     }
     public function search()
     {

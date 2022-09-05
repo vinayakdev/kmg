@@ -32,7 +32,7 @@ class Smprofile extends Component
     public function boot()
     {
 
-        $this->users = User::join('profiles', 'profiles.user_id', 'users.id')->where('gender', '!=', Auth::user()->gender)->where('users.id', '!=', Auth::user()->id,);
+        $this->users = User::join('profiles', 'profiles.user_id', 'users.id')->where('gender', '!=', Auth::user()->gender);
     }
     public function mount()
     {

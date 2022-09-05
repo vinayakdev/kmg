@@ -26,6 +26,7 @@ class User extends Authenticatable
     protected $fillable = [
         "name",
         "lname",
+        "status",
         "email",
         "dob",
         "username",
@@ -66,14 +67,14 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        static::created(function ($user) {
-            $user->profile()->create(["name" => $user->name]);
-        });
+        // static::created(function ($user) {
+        //     $user->profile()->create(["name" => $user->name]);
+        // });
     }
 
     public function profile()
     {
-        return $this->hasOne(Profile::class );
+        return $this->hasOne(Profile::class);
     }
     public function comment()
     {
