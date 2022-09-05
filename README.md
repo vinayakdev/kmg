@@ -10,7 +10,7 @@ Kerala Matrimonial Guide is a start of a fresh designed matrimonial website made
 ## Welcome Page
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="screenshot/homescreen.png"></a></p>
 
-## Dash
+## Dashboard
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="screenshot/Dash.png"></a></p>
 
